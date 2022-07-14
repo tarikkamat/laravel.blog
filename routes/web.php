@@ -80,3 +80,19 @@ Route::prefix('admin')->name('admin')->group(function () {
     });
 
 });
+
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/article/{slug}', [\App\Http\Controllers\ArticleController::class, 'show'])->name('article.show');
+Route::get('/category/{slug}', [\App\Http\Controllers\CategoryController::class, 'show'])->name('category.show');
+
+/* Add comments */
+Route::post('/comments/add', [\App\Http\Controllers\CommentController::class,'create'])->name('comments.create');
+
+/* Static Routes */
+Route::get('/about', function () {
+    return view('frontend.about');
+})->name('about');
+Route::get('/contact', function () {
+    return view('frontend.contact');
+})->name('contact');
+/* Static Routes */

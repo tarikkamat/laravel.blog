@@ -7,6 +7,18 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
+    public function create(Request $request)
+    {
+        Comment::create([
+            'name' => $request->name,
+            'content' => $request->get('content'),
+            'ip_adress' => $request->ip(),
+            'article_id' => $request->article_id
+        ]);
+        return back()->with('toas_success', 'Successfully created a new comment');
+    }
+
+
     public function statusChange($id)
     {
         $comment = Comment::findOrFail($id);

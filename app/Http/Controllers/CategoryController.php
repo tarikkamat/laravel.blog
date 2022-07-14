@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Category\StoreCategoryRequest;
 use App\Http\Requests\Category\UpdateCategoryRequest;
+use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Support\Str;
 
@@ -56,9 +57,17 @@ class CategoryController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $category = Category::where('slug', $slug)->first();
+
+        $data = array();
+        foreach ($category->articles as $article) {
+            if($article->status == 'active')
+                $data[] = $article;
+        }
+
+        return view('frontend.category', ['articles' => $data, 'category' => $category]);
     }
 
     /**
