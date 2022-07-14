@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CategoryRequest;
+use App\Http\Requests\Category\StoreCategoryRequest;
+use App\Http\Requests\Category\UpdateCategoryRequest;
 use App\Models\Category;
 use Illuminate\Support\Str;
 
@@ -36,7 +37,7 @@ class CategoryController extends Controller
      * @param CategoryRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CategoryRequest $request)
+    public function store(StoreCategoryRequest $request)
     {
 
         Category::create([
@@ -79,10 +80,9 @@ class CategoryController extends Controller
      * @param CategoryRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function update(CategoryRequest $request, $id)
+    public function update(UpdateCategoryRequest $request, $id)
     {
         $category = Category::find($id)->update([
-            'id' => $request->id,
             'name' => $request->name,
             'slug' => Str::slug($request->name),
             'parent_id' => $request->parent_id,

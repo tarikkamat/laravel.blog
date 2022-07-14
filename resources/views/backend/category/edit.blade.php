@@ -57,7 +57,7 @@
                                                 <option
                                                     value="{{ $category->parent_id }}">{{ $category->child->name }}</option>
                                                 @foreach($categories as $item)
-                                                    @if($item->id != $category->child->id)
+                                                    @if($item->id != $category->child->id && $item->id != $category->id)
                                                         <option value="{{ $item->id }}">{{ $item->name }}</option>
                                                     @endif
                                                 @endforeach

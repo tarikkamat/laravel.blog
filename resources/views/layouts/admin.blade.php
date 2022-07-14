@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
+    <!-- Extra CSS -->
+    @yield('css')
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -113,6 +115,8 @@
 <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
 <!-- SweetAlert2 -->
 @include('sweetalert::alert')
+<!-- Extra JS -->
+@yield('js')
 
 </body>
 </html>

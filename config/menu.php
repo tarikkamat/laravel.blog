@@ -25,6 +25,40 @@ return [
                 'url' => 'admin.category.create'
             ]
         ]
-    ]
+    ],
+
+    'menu3' => [
+        'url' => '#',
+        'icon' => 'tags',
+        'title' => 'Tag',
+        'is_submenu' => true,
+        'child_menus' => [
+            'child1' => [
+                'title' => 'List',
+                'url' => 'admin.tag.index'
+            ],
+            'child2' => [
+                'title' => 'Add',
+                'url' => 'admin.tag.create'
+            ]
+        ]
+    ],
+
+    'menu4' => [
+        'url' => '#',
+        'icon' => 'file',
+        'title' => 'Article',
+        'is_submenu' => true,
+        'child_menus' => [
+            'child1' => [
+                'title' => 'List',
+                'url' => 'admin.article.index'
+            ],
+            'child2' => [
+                'title' => 'Add',
+                'url' => 'admin.article.create'
+            ]
+        ]
+    ],
 
 ];
