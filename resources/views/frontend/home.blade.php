@@ -34,7 +34,9 @@
                                 <div class="entry__excerpt">
                                     <p>
                                         @if(strlen($article->content) > 100)
-                                            {{ substr($article->content, 0, 100) }}...
+                                            {!! substr($article->content, 0, 100) !!}...
+                                            @else
+                                            {!! $article->content !!}
                                         @endif
                                     </p>
                                 </div>

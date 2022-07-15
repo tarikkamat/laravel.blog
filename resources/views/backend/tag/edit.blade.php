@@ -38,7 +38,7 @@
                                         <label for="name">Name</label>
                                         <input type="text" class="form-control @error('name') is-invalid @enderror"
                                                name="name" id="name"
-                                               value="{{ $category->name }}">
+                                               value="{{ $tag->name }}">
                                         @error('name')
                                         <span class="error invalid-feedback">{{ $message }}</span>
                                         @enderror
