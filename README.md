@@ -28,12 +28,32 @@ Created with [MySQL](https://www.mysql.com/products/workbench/)
 
 ## How to use
 
-- Clone the repository with __git clone__
-- Copy __.env.example__ file to __.env__ and edit database credentials there
-- Run __composer install__
-- Run __php artisan key:generate__
-- Run __php artisan migrate --seed__ (it has some seeded data for your testing)
-- That's it: launch the main URL.
+Clone the project
+
+```bash
+git clone https://github.com/tarikkamat/PersonalBlog.git
+```
+
+Go to the project directory
+
+```bash
+  cd project-name
+```
+
+-   Copy .env.example file to .env and edit database credentials there
+
+```bash
+    composer install
+```
+
+```bash
+    php artisan key:generate
+```
+
+```bash
+    php artisan migrate:fresh --seed
+```
+
 - You can login to adminpanel by going go `/admin/login` URL and login with credentials __demo_admin__ - __password__
 
 ---
